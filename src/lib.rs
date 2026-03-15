@@ -6,6 +6,10 @@ pub fn is_even(n: i32) -> bool {
     n % 2 == 0
 }
 
+pub fn divide(a: i32, b: i32) -> Option<i32> {
+    if b == 0 { None } else { Some(a / b) }
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -39,5 +43,18 @@ mod tests {
     #[test]
     fn test_is_even_with_negative_odd() {
         assert!(!is_even(-3));
+    }
+
+    #[test]
+    fn test_divide_normal() {
+        assert_eq!(divide(10, 2), Some(5));
+        assert_eq!(divide(7, 3), Some(2));
+        assert_eq!(divide(-10, 2), Some(-5));
+    }
+
+    #[test]
+    fn test_divide_by_zero() {
+        assert_eq!(divide(10, 0), None);
+        assert_eq!(divide(0, 0), None);
     }
 }
