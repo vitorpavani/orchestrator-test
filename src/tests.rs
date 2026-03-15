@@ -53,3 +53,32 @@ fn test_multiply() {
 fn test_subtract() {
     assert_eq!(subtract(5, 3), 2);
 }
+
+#[test]
+fn test_power_zero_exponent() {
+    assert_eq!(power(5, 0), Some(1));
+    assert_eq!(power(0, 0), Some(1));
+    assert_eq!(power(-3, 0), Some(1));
+}
+
+#[test]
+fn test_power_base_zero() {
+    assert_eq!(power(0, 1), Some(0));
+    assert_eq!(power(0, 5), Some(0));
+}
+
+#[test]
+fn test_power_positive_result() {
+    assert_eq!(power(2, 3), Some(8));
+    assert_eq!(power(3, 4), Some(81));
+    assert_eq!(power(-2, 3), Some(-8));
+    assert_eq!(power(-2, 2), Some(4));
+    assert_eq!(power(10, 2), Some(100));
+}
+
+#[test]
+fn test_power_overflow() {
+    assert_eq!(power(2, 31), None);
+    assert_eq!(power(1000, 10), None);
+    assert_eq!(power(i32::MAX, 2), None);
+}
