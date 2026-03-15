@@ -10,6 +10,10 @@ pub fn divide(a: i32, b: i32) -> Option<i32> {
     if b == 0 { None } else { Some(a / b) }
 }
 
+pub fn subtract(a: i32, b: i32) -> i32 {
+    a - b
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -56,5 +60,10 @@ mod tests {
     fn test_divide_by_zero() {
         assert_eq!(divide(10, 0), None);
         assert_eq!(divide(0, 0), None);
+    }
+
+    #[test]
+    fn test_subtract() {
+        assert_eq!(subtract(5, 3), 2);
     }
 }
