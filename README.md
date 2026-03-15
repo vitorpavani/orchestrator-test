@@ -1,2 +1,4 @@
-# orchestrator-test
-Test repo for orchestrator end-to-end validation
+# Orchestrator Test Repo
+
+A minimal Rust project used to validate the orchestrator end-to-end workflow.
+
