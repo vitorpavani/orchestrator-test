@@ -78,3 +78,30 @@ fn test_gcd_common_divisor() {
     assert_eq!(gcd(100, 50), 50);
     assert_eq!(gcd(54, 24), 6);
 }
+
+#[test]
+fn test_clamp_below_range() {
+    assert_eq!(clamp(-5, 0, 10), 0);
+}
+
+#[test]
+fn test_clamp_above_range() {
+    assert_eq!(clamp(15, 0, 10), 10);
+}
+
+#[test]
+fn test_clamp_in_range() {
+    assert_eq!(clamp(5, 0, 10), 5);
+}
+
+#[test]
+fn test_clamp_min_equals_max() {
+    assert_eq!(clamp(3, 7, 7), 7);
+    assert_eq!(clamp(7, 7, 7), 7);
+    assert_eq!(clamp(10, 7, 7), 7);
+}
+
+#[test]
+fn test_clamp_min_greater_than_max() {
+    assert_eq!(clamp(5, 10, 5), 10);
+}
