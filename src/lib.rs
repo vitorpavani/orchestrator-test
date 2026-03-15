@@ -29,5 +29,10 @@ pub fn gcd(a: u64, b: u64) -> u64 {
     x
 }
 
+pub mod strings;
+
 #[cfg(test)]
 mod tests;
+
+#[cfg(test)]
+mod strings_tests;
