@@ -55,6 +55,31 @@ fn test_subtract() {
 }
 
 #[test]
+fn test_power_zero_exponent() {
+    assert_eq!(power(5, 0), Some(1));
+    assert_eq!(power(-3, 0), Some(1));
+}
+
+#[test]
+fn test_power_base_zero() {
+    assert_eq!(power(0, 0), Some(1));
+    assert_eq!(power(0, 5), Some(0));
+}
+
+#[test]
+fn test_power_normal() {
+    assert_eq!(power(2, 10), Some(1024));
+    assert_eq!(power(-2, 3), Some(-8));
+    assert_eq!(power(3, 4), Some(81));
+}
+
+#[test]
+fn test_power_overflow() {
+    assert_eq!(power(i32::MAX, 2), None);
+    assert_eq!(power(2, 31), None);
+}
+
+#[test]
 fn test_gcd_zero_zero() {
     assert_eq!(gcd(0, 0), 0);
 }

@@ -18,6 +18,14 @@ pub fn subtract(a: i32, b: i32) -> i32 {
     a - b
 }
 
+pub fn power(base: i32, exp: u32) -> Option<i32> {
+    let mut result: i32 = 1;
+    for _ in 0..exp {
+        result = result.checked_mul(base)?;
+    }
+    Some(result)
+}
+
 pub fn gcd(a: u64, b: u64) -> u64 {
     let mut x = a;
     let mut y = b;
