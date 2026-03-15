@@ -1,3 +1,4 @@
 /target
+.cargo-target/
 orchestrator.toml
 .worktrees/
