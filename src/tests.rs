@@ -55,6 +55,33 @@ fn test_subtract() {
 }
 
 #[test]
+fn test_clamp_below_range() {
+    assert_eq!(clamp(-5, 0, 10), 0);
+}
+
+#[test]
+fn test_clamp_above_range() {
+    assert_eq!(clamp(15, 0, 10), 10);
+}
+
+#[test]
+fn test_clamp_in_range() {
+    assert_eq!(clamp(5, 0, 10), 5);
+}
+
+#[test]
+fn test_clamp_min_equals_max() {
+    assert_eq!(clamp(7, 5, 5), 5);
+    assert_eq!(clamp(5, 5, 5), 5);
+    assert_eq!(clamp(3, 5, 5), 5);
+}
+
+#[test]
+fn test_clamp_min_greater_than_max() {
+    assert_eq!(clamp(3, 10, 5), 10);
+}
+
+#[test]
 fn test_gcd_zero_zero() {
     assert_eq!(gcd(0, 0), 0);
 }
