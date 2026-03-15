@@ -18,6 +18,10 @@ pub fn subtract(a: i32, b: i32) -> i32 {
     a - b
 }
 
+pub fn greet(name: &str) -> String {
+    format!("Hello, {name}!")
+}
+
 pub fn gcd(a: u64, b: u64) -> u64 {
     let mut x = a;
     let mut y = b;

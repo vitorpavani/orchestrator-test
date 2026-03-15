@@ -78,3 +78,8 @@ fn test_gcd_common_divisor() {
     assert_eq!(gcd(100, 50), 50);
     assert_eq!(gcd(54, 24), 6);
 }
+
+#[test]
+fn test_greet() {
+    assert_eq!(greet("world"), "Hello, world!");
+}
