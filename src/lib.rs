@@ -18,5 +18,18 @@ pub fn subtract(a: i32, b: i32) -> i32 {
     a - b
 }
 
+pub fn clamp(value: i32, min: i32, max: i32) -> i32 {
+    if min > max {
+        return min;
+    }
+    if value < min {
+        min
+    } else if value > max {
+        max
+    } else {
+        value
+    }
+}
+
 #[cfg(test)]
 mod tests;

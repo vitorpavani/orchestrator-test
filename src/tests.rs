@@ -53,3 +53,29 @@ fn test_multiply() {
 fn test_subtract() {
     assert_eq!(subtract(5, 3), 2);
 }
+
+#[test]
+fn test_clamp_value_below_min() {
+    assert_eq!(clamp(-5, 0, 10), 0);
+}
+
+#[test]
+fn test_clamp_value_above_max() {
+    assert_eq!(clamp(15, 0, 10), 10);
+}
+
+#[test]
+fn test_clamp_value_in_range() {
+    assert_eq!(clamp(5, 0, 10), 5);
+}
+
+#[test]
+fn test_clamp_min_equals_max() {
+    assert_eq!(clamp(5, 7, 7), 7);
+    assert_eq!(clamp(7, 7, 7), 7);
+}
+
+#[test]
+fn test_clamp_min_greater_than_max() {
+    assert_eq!(clamp(5, 10, 0), 10);
+}
