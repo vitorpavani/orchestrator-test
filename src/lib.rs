@@ -1,3 +1,5 @@
+pub mod strings;
+
 pub fn add(left: u64, right: u64) -> u64 {
     left + right
 }
@@ -31,3 +33,6 @@ pub fn gcd(a: u64, b: u64) -> u64 {
 
 #[cfg(test)]
 mod tests;
+
+#[cfg(test)]
+mod strings_tests;
