@@ -18,5 +18,16 @@ pub fn subtract(a: i32, b: i32) -> i32 {
     a - b
 }
 
+pub fn gcd(a: u64, b: u64) -> u64 {
+    let mut x = a;
+    let mut y = b;
+    while y != 0 {
+        let temp = y;
+        y = x % y;
+        x = temp;
+    }
+    x
+}
+
 #[cfg(test)]
 mod tests;

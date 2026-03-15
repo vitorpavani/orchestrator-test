@@ -53,3 +53,28 @@ fn test_multiply() {
 fn test_subtract() {
     assert_eq!(subtract(5, 3), 2);
 }
+
+#[test]
+fn test_gcd_zero_zero() {
+    assert_eq!(gcd(0, 0), 0);
+}
+
+#[test]
+fn test_gcd_zero_n() {
+    assert_eq!(gcd(0, 5), 5);
+    assert_eq!(gcd(7, 0), 7);
+}
+
+#[test]
+fn test_gcd_coprime() {
+    assert_eq!(gcd(13, 17), 1);
+    assert_eq!(gcd(25, 9), 1);
+}
+
+#[test]
+fn test_gcd_common_divisor() {
+    assert_eq!(gcd(12, 18), 6);
+    assert_eq!(gcd(48, 18), 6);
+    assert_eq!(gcd(100, 50), 50);
+    assert_eq!(gcd(54, 24), 6);
+}
